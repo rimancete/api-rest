@@ -31,8 +31,8 @@ class TokenController {
       // configura o tempo de expiração
       expiresIn: process.env.TOKEN_EXPIRATION,
     });
-    // retorna o token
-    return res.json({ token });
+    // retorna o token e dados do usuário
+    return res.json({ token, user: { nome: user.nome, id, email } });
   }
 }
 
